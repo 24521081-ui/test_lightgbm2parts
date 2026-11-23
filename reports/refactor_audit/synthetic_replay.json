@@ -1,0 +1,14 @@
+[
+  {
+    "entrypoint": "run_c7_lambda075",
+    "status": "PASS",
+    "scope": "28-step synthetic path; all forecast and component columns; shuffled rows aligned by keys",
+    "max_absolute_difference": 0
+  },
+  {
+    "entrypoint": "run_c7_lambda050",
+    "status": "PASS",
+    "scope": "28-step synthetic path; all forecast and component columns; shuffled rows aligned by keys",
+    "max_absolute_difference": 0
+  }
+]

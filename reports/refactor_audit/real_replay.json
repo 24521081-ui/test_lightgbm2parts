@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "store": "CA_1",
+  "origin": 1885,
+  "n_forecasts": 85372,
+  "scope": "Independent old/new 28-step inference with same saved LightGBM and original C6 Platt coefficients. All components, per-item metrics and aggregates aligned by keys.",
+  "max_absolute_difference_old_new": 0.0,
+  "max_absolute_difference_vs_saved_csv": 0.0,
+  "scores": {
+    "model": "lightgbm_two_part",
+    "split": "validation",
+    "store_id": "CA_1",
+    "n_items": 3049,
+    "MAE": 1.1246409033174403,
+    "RMSE": 2.195155614627311,
+    "RMSSE_mean_unweighted": 0.7155342115621935,
+    "training_time_seconds": 0,
+    "rmsse_valid_items": 3049,
+    "rmsse_undefined_items": 0
+  },
+  "predicted_total": 131138.66528764222,
+  "actual_total": 127955.0,
+  "bias_pct": 2.4881132332790656,
+  "not_verified": "Other nine stores, C5/C6 independent replay and full training were not run."
+}

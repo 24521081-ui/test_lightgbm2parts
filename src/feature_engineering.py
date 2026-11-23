@@ -95,8 +95,8 @@ def prepare_training_data(history):
     frame = frame.dropna(subset=HISTORY_FEATURES)
     features = BASE_FEATURES + (["sell_price"] if "sell_price" in frame else [])
 
-    if frame.empty or frame.sales.sum() <= 0:
-        raise ValueError("Không đủ Train hoặc toàn bộ lượng bán Train bằng 0.")
+    if frame.empty:
+        raise ValueError("Không đủ Train sau cửa sổ khởi tạo.")
 
     # 3.3. Tách đầu vào X và mục tiêu y trước khi chuyển sang huấn luyện.
     X = frame[features]

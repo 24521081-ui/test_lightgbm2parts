@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "imported_modules": 30,
+  "unchanged_files": [
+    "src/training.py",
+    "src/data_loader.py",
+    "src/preprocessing.py",
+    "src/feature_engineering.py",
+    "src/reporting.py",
+    "scripts/run_c6_platt.py",
+    "scripts/run_c6_final_test.py",
+    "scripts/run_stage_b_robustness.py"
+  ],
+  "config": "PASS",
+  "scope": "Static imports and byte comparisons; no training or forecasts"
+}

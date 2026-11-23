@@ -1,0 +1,86 @@
+{
+  "reviewed_source_and_docs": 44,
+  "reviewed_python": 32,
+  "modified_existing_python": 11,
+  "reduced_python": 9,
+  "net_lines_removed_existing": 433,
+  "changes": [
+    {
+      "file": "src/forecasting.py",
+      "lines_before": 149,
+      "lines_after": 149,
+      "sha256_before": "6e448b53dda11d9679457fbc4d01b395830fe973a07df370f19ecd25372e9154",
+      "sha256_after": "cedfd61963119b6a0ec65463b33462bf669182007e185d2a6d45f31def2f2e7c"
+    },
+    {
+      "file": "scripts/analyze_c5_by_groups.py",
+      "lines_before": 559,
+      "lines_after": 557,
+      "sha256_before": "7f2e7e553f43a570917168756a6ec4d6aca1f9b3317dc0275a767b56d3efa382",
+      "sha256_after": "4bf5bcf7976ab9960324762d156e6646080ced3cf555e886861e6e23e392b015"
+    },
+    {
+      "file": "scripts/diagnose_c5_bias.py",
+      "lines_before": 627,
+      "lines_after": 625,
+      "sha256_before": "8508b68aa2f86af55a557229fa32e7071382ff06509bb37d00f30ddba364ab0a",
+      "sha256_after": "7b841b1e49cf6a1b184699cb7ab503f0c81833d5d49939be8cc6b2cfdb90195a"
+    },
+    {
+      "file": "scripts/run_c1_classifier15.py",
+      "lines_before": 133,
+      "lines_after": 126,
+      "sha256_before": "9401bc6dd78ff1a86177d734bc2ab9beca1c2b9e805468bbd15e29332135f3fe",
+      "sha256_after": "adbd3a306a61f4721e5d4fb2cf54c3f382c7bf730c002302c39cf998bdb3c99f"
+    },
+    {
+      "file": "scripts/run_c2_classifier48.py",
+      "lines_before": 626,
+      "lines_after": 607,
+      "sha256_before": "661048ec392f8844940bdee29d806eaa0ff3a5091144f61250089d6e925c15dd",
+      "sha256_after": "67914af7ac198d29fd6fcc50235c708e824ca3d05eaf4034a21f1f23f141cc11"
+    },
+    {
+      "file": "scripts/run_c4_with_prices_lagged.py",
+      "lines_before": 1136,
+      "lines_after": 1133,
+      "sha256_before": "05aa04e4c6ce90c559fe302414a8b5cc7c1e3e01716ef99b2eec0617fe19f51e",
+      "sha256_after": "0507289d70e25fd55cd33999d78f0baf49a34839899c18c0ac4d61a8eeb03fdf"
+    },
+    {
+      "file": "scripts/run_c5_price_features.py",
+      "lines_before": 1239,
+      "lines_after": 1239,
+      "sha256_before": "1852c372cdfb3e90c118b834c2d19e27efc64d777eab1005c6488a27823fb6ec",
+      "sha256_after": "c8e6f87b819ed1a888c1885fbffa365ee2356be200dfdea3c2a89e5c79c35774"
+    },
+    {
+      "file": "scripts/run_c7_final_test.py",
+      "lines_before": 331,
+      "lines_after": 323,
+      "sha256_before": "3710fa369796bf2f0d99183df50a25f3e90e96a51b939acd1b4bf14d7ab467a4",
+      "sha256_after": "00cce14cea038c4f2edc0251d05294161efebf02734a9de5b1613d5df2a946b7"
+    },
+    {
+      "file": "scripts/run_c7_lambda050.py",
+      "lines_before": 1325,
+      "lines_after": 1094,
+      "sha256_before": "41f20aca255c2ab0c55fe12e596919cde8870b7bae6831aab2fea9557e8bce9f",
+      "sha256_after": "816f211bd96f8cb7cf9a18bc1d6fbf25dbd44c718b6fc008a6f3ff41227fe4b5"
+    },
+    {
+      "file": "scripts/run_c7_lambda075.py",
+      "lines_before": 1098,
+      "lines_after": 956,
+      "sha256_before": "fc1b874c310d53d86930f33fcf52b52768884c438f215ec21d51dcae92b83cf0",
+      "sha256_after": "08ac6c443595a62d59b05ea8ecac50586cda0460439c38ab0f2f95d8234d9c68"
+    },
+    {
+      "file": "scripts/run_c7_validation_1885.py",
+      "lines_before": 1028,
+      "lines_after": 1009,
+      "sha256_before": "6b17f0bfa8cf4cdf9d99edf8445a913ce9fd3a573344c6341806f49fa8cc00a9",
+      "sha256_after": "766ff1c21fd44825258432a0b7f3387a6d955d6639ed8d911c38f5f2fbebb020"
+    }
+  ]
+}

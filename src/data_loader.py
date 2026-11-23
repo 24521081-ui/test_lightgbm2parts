@@ -1,6 +1,7 @@
 """Giai đoạn 1: đọc dữ liệu M5 theo cửa hàng và khoảng ngày cần sử dụng."""
 
 from pathlib import Path
+import csv
 
 import logging
 
@@ -26,6 +27,16 @@ def check_files(directory, use_prices=False):
             f"Không tìm thấy {', '.join(missing)} trong {directory}. "
             "Vui lòng tải dữ liệu M5 và đặt vào thư mục này."
         )
+    with (Path(directory) / SALES_FILE).open(encoding="utf-8-sig", newline="") as stream:
+        reader = csv.reader(stream)
+        header = next(reader)
+        first = next(reader, None)
+    days = [name for name in header if name.startswith("d_")]
+    if (days != [f"d_{day}" for day in range(1, 1942)]
+            or len(header) != len(set(header))
+            or not set(IDENTIFIERS).issubset(header)
+            or first is None or not first[header.index("id")].endswith("_evaluation")):
+        raise ValueError("Cần CSV evaluation đầy đủ d_1–d_1941 và ID _evaluation.")
 
 
 def list_stores(directory):
@@ -78,6 +89,7 @@ def load_store(
     if (
         wide[IDENTIFIERS].isna().any().any()
         or wide.duplicated(["item_id", "store_id"]).any()
+        or not wide.id.str.endswith("_evaluation").all()
     ):
         raise ValueError("Mã sản phẩm bị thiếu hoặc chuỗi bị trùng.")
     values = wide[days].to_numpy()

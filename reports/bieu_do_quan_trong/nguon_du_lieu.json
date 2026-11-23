@@ -1,0 +1,60 @@
+{
+  "period": "Validation d_1886–d_1913 · 10 cửa hàng · 30.490 chuỗi",
+  "sources": [
+    "results/analysis/final_test_C6_C7_frozen/comparison_C6_C7/01_by_origin.csv",
+    "results/analysis/final_test_C6_C7_frozen/comparison_C6_C7/manifest_C6_C7.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/01_by_origin.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/02_by_store.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_1/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_1/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_2/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_2/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_3/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_3/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_4/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/CA_4/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/TX_1/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/TX_1/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/TX_2/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/TX_2/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/TX_3/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/TX_3/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/WI_1/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/WI_1/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/WI_2/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/WI_2/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/WI_3/completed.json",
+    "results/analysis/stage_C7_validation_d1885_lambda075/folds/WI_3/forecast_C7.csv",
+    "results/analysis/stage_C7_validation_d1885_lambda075/manifest.json",
+    "results/analysis/validation_C6_platt_10_stores_20261121T145343079375Z/stage_A/06_reliability_overall.csv",
+    "results/analysis/validation_C6_platt_10_stores_20261121T145343079375Z/stage_A/09_by_sales_pattern.csv",
+    "results/metrics/validation_C5_full_10_stores_20261121T140034335643Z/manifest.json",
+    "results/metrics/validation_C6_platt_10_stores_20261121T145343079375Z/manifest.json",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_CA_1/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_CA_2/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_CA_3/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_CA_4/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_TX_1/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_TX_2/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_TX_3/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_WI_1/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_WI_2/actual_vs_predictions.csv",
+    "results/validation/validation_C6_platt_10_stores_20261121T145343079375Z_WI_3/actual_vs_predictions.csv"
+  ],
+  "figures": [
+    "02_RMSSE_theo_nhom_luong_ban.png",
+    "03_RMSSE_theo_10_cua_hang.png",
+    "04_so_sanh_C5_C6_C7.png",
+    "05_hieu_chuan_xac_suat.png",
+    "06_thuc_te_va_du_bao_28_ngay.png",
+    "07_sai_lech_tong_luong_ban.png"
+  ],
+  "missing": {
+    "01_so_sanh_RMSSE_6_mo_hinh.png": "Chưa có kết quả ES_bu, Croston–SBA, Random Forest, LightGBM–Tweedie cùng tập đánh giá."
+  },
+  "limitations": [
+    "Hình 02 chỉ có C5/C6 theo nhóm lịch sử đã lưu.",
+    "Chưa lưu xác suất từng ngày C7; hình 05 chỉ so sánh raw/Platt trên cùng đường C6.",
+    "Hình 06 dùng C6/C7; không ghép thêm kết quả khác thời kỳ."
+  ]
+}

@@ -35,7 +35,8 @@ def recursive_forecast(
     split="validation",
     horizon=28,
     last_prices=None,
-    model_name="lightgbm_tweedie",
+    model_name="lightgbm_two_part",
+    return_components=False,
 ):
     """Giữ mô hình cố định, thêm dự báo vào lịch sử trước bước tiếp theo."""
     history = np.asarray(history, dtype=np.float32)
@@ -56,6 +57,7 @@ def recursive_forecast(
     temporary = history[:, -28:].copy()
     calendar = calendar.set_index("d", verify_integrity=True)
     output = []
+    components = []
     for step in range(1, horizon + 1):
         day = f"d_{origin + step}"
         if day not in calendar.index:
@@ -65,13 +67,22 @@ def recursive_forecast(
             temporary, items, calendar.loc[day], state, categories, last_prices
         )
         # 5.3. Dự báo cho tất cả sản phẩm, kiểm tra và chặn giá trị âm.
-        prediction = np.asarray(model.predict(X[features]), dtype=np.float64)
+        if return_components:
+            probability, conditional = model.predict_components(X[features])
+            prediction = probability * conditional
+            components.append(pd.DataFrame({
+                "item_id": list(items), "store_id": store, "target_day": day,
+                "probability_positive": probability,
+                "conditional_units": conditional,
+            }))
+        else:
+            prediction = np.asarray(model.predict(X[features]), dtype=np.float64)
         if prediction.shape != (len(items),) or not np.isfinite(prediction).all():
             raise ValueError("Mô hình trả dự báo sai kích thước hoặc NaN/vô hạn.")
-        prediction = np.maximum(prediction, 0).astype("float32")
+        prediction = np.maximum(prediction, 0)
         if not np.isfinite(prediction).all():
-            raise ValueError("Dự báo vượt phạm vi float32.")
-        LOGGER.info("Dự báo %s | %s: bước %d/%d", model_name, store, step, horizon)
+            raise ValueError("Dự báo vượt phạm vi số hữu hạn.")
+        LOGGER.debug("Dự báo %s | %s: bước %d/%d", model_name, store, step, horizon)
         output.append(
             pd.DataFrame(
                 {
@@ -89,7 +100,10 @@ def recursive_forecast(
         # Ngày sau dùng dự báo vừa tạo; tuyệt đối không thay bằng doanh số thực tế.
         # 5.4. Trượt cửa sổ và thêm dự báo để tính đặc trưng ngày tiếp theo.
         temporary = np.column_stack([temporary[:, 1:], prediction])
-    return pd.concat(output, ignore_index=True)[FORECAST_COLUMNS]
+    forecast = pd.concat(output, ignore_index=True)[FORECAST_COLUMNS]
+    if return_components:
+        return forecast, pd.concat(components, ignore_index=True)
+    return forecast
 
 
 class SeasonalNaive:
